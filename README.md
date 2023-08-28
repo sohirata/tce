@@ -1,5 +1,5 @@
 # tce
-Tensor Contraction Engine (TCE) is a symbol algebra code, which derives working equations of <i>ab initio</i> electron-correlated theories and synthesizes the corresponding computer programs that execute in parallel as a part of NWCHEM or UTCHEM quantum chemistry software.
+Tensor Contraction Engine (TCE) is a symbol algebra code written in Python, which derives working equations of <i>ab initio</i> electron-correlated theories and synthesizes the corresponding computer programs that execute in parallel as a part of NWCHEM or UTCHEM quantum chemistry software.
 
 # author
 So Hirata (sohirata@illinois.edu)
