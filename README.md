@@ -1,5 +1,5 @@
 # tce
-Tensor Contraction Engine
+Tensor Contraction Engine (TCE) is a symbol algebra code, which derives working equations of <i>ab initio</i> electron-correlated theories and synthesizes the corresponding computer programs that execute in parallel as a part of NWCHEM or UTCHEM quantum chemistry software.
 
 # author
 So Hirata (sohirata@illinois.edu)
@@ -30,7 +30,7 @@ The CCSD T2 amplitude equation can be derived by oce.py as follows:
      >>> print(a)
      >>> a.writetofile("output/ccsd_t2.out")
 
-The CCSD T2 amplitude equation can then be transformed to a Fortran77 code to be called by NWChem:
+The CCSD T2 amplitude equation can then be transformed to a parallel Fortran77 code to be a part of NWCHEM:
 
      python
      >>> import tce
