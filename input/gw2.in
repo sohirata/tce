@@ -1,0 +1,2 @@
+1.0/16.0 Sum( h3 h4 h5 p6 g7 g8 g9 g10 p11 h12 ) w( h3 h4 h5 p6 ) v( g7 g8 g9 g10 ) x( p11 h12 ) { h1+ p2 } { h3+ h4+ p6 h5 } { g7+ g8+ g10 g9 } { p11+ h12 }
+1.0/16.0 Sum( p3 h4 p5 p6 g7 g8 g9 g10 p11 h12 ) w( p3 h4 p5 p6 ) v( g7 g8 g9 g10 ) x( p11 h12 ) { h1+ p2 } { p3+ h4+ p6 p5 } { g7+ g8+ g10 g9 } { p11+ h12 }

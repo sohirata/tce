@@ -1,0 +1,8 @@
+[ - 1.0 + 1.0 * P( p2 p1 h9 h10 => p1 p2 h9 h10 ) + 1.0 * P( p2 p1 h9 h10 => p2 p1 h10 h9 ) - 1.0 * P( p2 p1 h9 h10 => p1 p2 h10 h9 ) ] * f ( p2 h9 ) * t2 ( p1 h10 )
+[ - 1.0 + 1.0 * P( p1 p2 h9 h10 => p1 p2 h10 h9 ) ] * Sum ( h3 ) * f ( h3 h9 ) * t2 ( p1 p2 h3 h10 )
+[ - 1.0 + 1.0 * P( p2 p1 h9 h10 => p1 p2 h9 h10 ) ] * Sum ( p3 ) * f ( p2 p3 ) * t2 ( p3 p1 h9 h10 )
+[ - 1.0 + 1.0 * P( p1 p2 h9 h10 => p2 p1 h9 h10 ) ] * Sum ( h3 ) * t1 ( p1 h3 ) * v ( h3 p2 h9 h10 )
+[ + 1.0 - 1.0 * P( p1 p2 h10 h9 => p1 p2 h9 h10 ) ] * Sum ( p3 ) * t1 ( p3 h10 ) * v ( p1 p2 h9 p3 )
+[ + 0.5 ] * Sum ( h3 h4 ) * t1 ( p1 p2 h3 h4 ) * v ( h3 h4 h9 h10 )
+[ + 1.0 - 1.0 * P( p1 p2 h10 h9 => p2 p1 h10 h9 ) - 1.0 * P( p1 p2 h10 h9 => p1 p2 h9 h10 ) + 1.0 * P( p1 p2 h10 h9 => p2 p1 h9 h10 ) ] * Sum ( h4 p3 ) * t1 ( p3 p1 h4 h10 ) * v ( h4 p2 h9 p3 )
+[ + 0.5 ] * Sum ( p3 p4 ) * t1 ( p3 p4 h9 h10 ) * v ( p1 p2 p3 p4 )

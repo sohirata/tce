@@ -1,0 +1,1 @@
+1.0/64.0 Sum( h1 h2 p3 p4 g5 g6 g7 g8 p9 p10 h11 h12 ) y+( h1 h2 p3 p4 ) v( g5 g6 g7 g8 ) x( p9 p10 h11 h12 ) { h1+ h2+ p4 p3 } { g5+ g6+ g8 g7 } { p9+ p10+ h12 h11 }

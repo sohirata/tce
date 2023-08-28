@@ -1,0 +1,28 @@
+1.0/1.0 Sum( g5 g6 ) y( ) f( g5 g6 ) { } { g5+ g6 } { p1+ p2+ h4 h3 }
+1.0/4.0 Sum( g5 g6 g7 g8 ) y( ) v( g5 g6 g7 g8 ) { } { g5+ g6+ g8 g7 } { p1+ p2+ h4 h3 }
+1.0/1.0 Sum( h5 p6 g7 g8 ) y( h5 p6 ) f( g7 g8 ) { h5+ p6 } { g7+ g8 } { p1+ p2+ h4 h3 }
+1.0/4.0 Sum( h5 p6 g7 g8 g9 g10 ) y( h5 p6 ) v( g7 g8 g9 g10 ) { h5+ p6 } { g7+ g8+ g10 g9 } { p1+ p2+ h4 h3 }
+1.0/4.0 Sum( h5 h6 p7 p8 g9 g10 ) y( h5 h6 p7 p8 ) f( g9 g10 ) { h5+ h6+ p8 p7 } { g9+ g10 } { p1+ p2+ h4 h3 }
+1.0/16.0 Sum( h5 h6 p7 p8 g9 g10 g11 g12 ) y( h5 h6 p7 p8 ) v( g9 g10 g11 g12 ) { h5+ h6+ p8 p7 } { g9+ g10+ g12 g11 } { p1+ p2+ h4 h3 }
+1.0/36.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p1+ p2+ h4 h3 }
+1.0/144.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p1+ p2+ h4 h3 }
+1.0/1.0 Sum( h5 p6 g7 g8 p9 h10 ) y( h5 p6 ) f( g7 g8 ) t( p9 h10 ) { h5+ p6 } { g7+ g8 } { p9+ h10 } { p1+ p2+ h4 h3 }
+1.0/4.0 Sum( h5 p6 g7 g8 g9 g10 p11 h12 ) y( h5 p6 ) v( g7 g8 g9 g10 ) t( p11 h12 ) { h5+ p6 } { g7+ g8+ g10 g9 } { p11+ h12 } { p1+ p2+ h4 h3 }
+1.0/4.0 Sum( h5 h6 p7 p8 g9 g10 p11 h12 ) y( h5 h6 p7 p8 ) f( g9 g10 ) t( p11 h12 ) { h5+ h6+ p8 p7 } { g9+ g10 } { p11+ h12 } { p1+ p2+ h4 h3 }
+1.0/16.0 Sum( h5 h6 p7 p8 g9 g10 g11 g12 p13 h14 ) y( h5 h6 p7 p8 ) v( g9 g10 g11 g12 ) t( p13 h14 ) { h5+ h6+ p8 p7 } { g9+ g10+ g12 g11 } { p13+ h14 } { p1+ p2+ h4 h3 }
+1.0/36.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 h14 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 h14 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ h14 } { p1+ p2+ h4 h3 }
+1.0/144.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 h16 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 h16 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ h16 } { p1+ p2+ h4 h3 }
+1.0/16.0 Sum( h5 h6 p7 p8 g9 g10 p11 p12 h13 h14 ) y( h5 h6 p7 p8 ) f( g9 g10 ) t( p11 p12 h13 h14 ) { h5+ h6+ p8 p7 } { g9+ g10 } { p11+ p12+ h14 h13 } { p1+ p2+ h4 h3 }
+1.0/64.0 Sum( h5 h6 p7 p8 g9 g10 g11 g12 p13 p14 h15 h16 ) y( h5 h6 p7 p8 ) v( g9 g10 g11 g12 ) t( p13 p14 h15 h16 ) { h5+ h6+ p8 p7 } { g9+ g10+ g12 g11 } { p13+ p14+ h16 h15 } { p1+ p2+ h4 h3 }
+1.0/144.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 p14 h15 h16 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 p14 h15 h16 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ p14+ h16 h15 } { p1+ p2+ h4 h3 }
+1.0/576.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 p16 h17 h18 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 p16 h17 h18 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ p16+ h18 h17 } { p1+ p2+ h4 h3 }
+1.0/1296.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 p14 p15 h16 h17 h18 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 p14 p15 h16 h17 h18 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ p14+ p15+ h18 h17 h16 } { p1+ p2+ h4 h3 }
+1.0/5184.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 p16 p17 h18 h19 h20 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 p16 p17 h18 h19 h20 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ p16+ p17+ h20 h19 h18 } { p1+ p2+ h4 h3 }
+1.0/8.0 Sum( h5 h6 p7 p8 g9 g10 p11 h12 p13 h14 ) y( h5 h6 p7 p8 ) f( g9 g10 ) t( p11 h12 ) t( p13 h14 ) { h5+ h6+ p8 p7 } { g9+ g10 } { p11+ h12 } { p13+ h14 } { p1+ p2+ h4 h3 }
+1.0/32.0 Sum( h5 h6 p7 p8 g9 g10 g11 g12 p13 h14 p15 h16 ) y( h5 h6 p7 p8 ) v( g9 g10 g11 g12 ) t( p13 h14 ) t( p15 h16 ) { h5+ h6+ p8 p7 } { g9+ g10+ g12 g11 } { p13+ h14 } { p15+ h16 } { p1+ p2+ h4 h3 }
+1.0/72.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 h14 p15 h16 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 h14 ) t( p15 h16 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ h14 } { p15+ h16 } { p1+ p2+ h4 h3 }
+1.0/288.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 h16 p17 h18 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 h16 ) t( p17 h18 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ h16 } { p17+ h18 } { p1+ p2+ h4 h3 }
+1.0/144.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 h14 p15 p16 h17 h18 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 h14 ) t( p15 p16 h17 h18 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ h14 } { p15+ p16+ h18 h17 } { p1+ p2+ h4 h3 }
+1.0/576.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 h16 p17 p18 h19 h20 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 h16 ) t( p17 p18 h19 h20 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ h16 } { p17+ p18+ h20 h19 } { p1+ p2+ h4 h3 }
+1.0/216.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 p13 h14 p15 h16 p17 h18 ) y( h5 h6 h7 p8 p9 p10 ) f( g11 g12 ) t( p13 h14 ) t( p15 h16 ) t( p17 h18 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12 } { p13+ h14 } { p15+ h16 } { p17+ h18 } { p1+ p2+ h4 h3 }
+1.0/864.0 Sum( h5 h6 h7 p8 p9 p10 g11 g12 g13 g14 p15 h16 p17 h18 p19 h20 ) y( h5 h6 h7 p8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 h16 ) t( p17 h18 ) t( p19 h20 ) { h5+ h6+ h7+ p10 p9 p8 } { g11+ g12+ g14 g13 } { p15+ h16 } { p17+ h18 } { p19+ h20 } { p1+ p2+ h4 h3 }

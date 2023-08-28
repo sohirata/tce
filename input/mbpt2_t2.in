@@ -1,0 +1,6 @@
+1.0/1.0 Sum( p q c k ) f( p q ) t2( c k ) {i+ j+ b a} {p+ q} {c+ k}
+1.0/4.0 Sum( p q c d k l ) f( p q ) t2( c d k l ) {i+ j+ b a} {p+ q} {c+ d+ l k}
+1.0/36.0 Sum( p q d e f l m n) f( p q ) t2( d e f l m n ) {i+ j+ b a} {p+ q} {d+ e+ f+ n m l}
+1.0/576.0 Sum( p q d e f g l m n o ) f( p q ) t2( d e f g l m n o ) {i+ j+ b a} {p+ q} {d+ e+ f+ g+ o n m l}
+1.0/4.0 Sum( p q r s c d k l) v( p q r s) t1(c k) {i+ j+ b a} {p+ q+ s r} {c+ k}
+1.0/16.0 Sum( p q r s c d k l) v( p q r s) t1(c d k l) {i+ j+ b a} {p+ q+ s r} {c+ d+ l k}

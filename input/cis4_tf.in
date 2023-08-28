@@ -1,0 +1,1 @@
+1.0/16.0 Sum( g3 g4 g5 g6 p7 p8 h9 h10 p11 h12 ) v( g3 g4 g5 g6 ) t( p7 p8 h9 h10 ) x( p11 h12 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ p8+ h10 h9 } { p11+ h12 }

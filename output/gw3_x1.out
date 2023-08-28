@@ -1,0 +1,2 @@
+[ + 0.5 ] * Sum ( h3 h4 p5 ) * v ( h3 h4 h1 p5 ) * x ( p5 p2 h3 h4 )
+[ + 0.5 ] * Sum ( h3 p4 p5 ) * v ( h3 p2 p4 p5 ) * x ( p4 p5 h3 h1 )

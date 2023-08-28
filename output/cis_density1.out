@@ -1,0 +1,4 @@
+[ + 1.0 ] * Sum ( h1 p2 ) * y+ ( h1 p2 ) * d ( p2 h1 ) * x ( )
+[ + 1.0 ] * Sum ( h1 p2 ) * y+ ( ) * d ( h1 p2 ) * x ( p2 h1 )
+[ - 1.0 ] * Sum ( h1 p2 h3 ) * y+ ( h1 p2 ) * d ( h3 h1 ) * x ( p2 h3 )
+[ + 1.0 ] * Sum ( h1 p2 p3 ) * y+ ( h1 p2 ) * d ( p2 p3 ) * x ( p3 h1 )

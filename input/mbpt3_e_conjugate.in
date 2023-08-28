@@ -1,0 +1,4 @@
+1.0/4.0 Sum( p q r s a i c k ) t1+( a i ) v( p q r s ) t1( c k ) {i+ a} {p+ q+ s r} {c+ k}
+1.0/16.0 Sum( p q r s a i c d k l ) t1+( a i ) v( p q r s ) t1( c d k l ) {i+ a} {p+ q+ s r} {c+ d+ l k}
+1.0/16.0 Sum( p q r s a b i j c k ) t1+( a b i j ) v( p q r s ) t1( c k ) {i+ j+ b a} {p+ q+ s r} {c+ k}
+1.0/64.0 Sum( p q r s a b i j c d k l ) t1+( a b i j ) v( p q r s ) t1( c d k l ) {i+ j+ b a} {p+ q+ s r} {c+ d+ l k}

@@ -1,0 +1,8 @@
+1.0/1.0 Sum( g1 g2 p3 h4 ) f( g1 g2 ) x( p3 h4 ) { g1+ g2 } { p3+ h4 }
+1.0/4.0 Sum( g1 g2 g3 g4 p5 h6 ) v( g1 g2 g3 g4 ) x( p5 h6 ) { g1+ g2+ g4 g3 } { p5+ h6 }
+1.0/16.0 Sum( g1 g2 g3 g4 p5 p6 h7 h8 ) v( g1 g2 g3 g4 ) x( p5 p6 h7 h8 ) { g1+ g2+ g4 g3 } { p5+ p6+ h8 h7 }
+1.0/1.0 Sum( g1 g2 p3 h4 ) f( g1 g2 ) t( p3 h4 ) x( ) { g1+ g2 } { p3+ h4 } { }
+1.0/4.0 Sum( g1 g2 g3 g4 p5 h6 ) v( g1 g2 g3 g4 ) t( p5 h6 ) x( ) { g1+ g2+ g4 g3 } { p5+ h6 } { }
+1.0/4.0 Sum( g1 g2 g3 g4 p5 h6 p7 h8 ) v( g1 g2 g3 g4 ) t( p5 h6 ) x( p7 h8 ) { g1+ g2+ g4 g3 } { p5+ h6 } { p7+ h8 }
+1.0/16.0 Sum( g1 g2 g3 g4 p5 p6 h7 h8 ) v( g1 g2 g3 g4 ) t( p5 p6 h7 h8 ) x( ) { g1+ g2+ g4 g3 } { p5+ p6+ h8 h7 } { }
+1.0/8.0 Sum( g1 g2 g3 g4 p5 h6 p7 h8 ) v( g1 g2 g3 g4 ) t( p5 h6 ) t( p7 h8 ) x( ) { g1+ g2+ g4 g3 } { p5+ h6 } { p7+ h8 } { }

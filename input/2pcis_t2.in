@@ -1,0 +1,3 @@
+1.0 Sum(p q c k d l) f(p q) c(c k) d(d l) {i+ j+ b a}{p+ q}{c+ k}{d+ l}
+1.0/4.0 Sum(p q r s c k d l) v(p q r s) c(c k) d(d l) {i+ j+ b a}{p+ q+ s r}{c+ k}{d+ l}
+-1.0 Sum(c k d l) e() c(c k) d(d l) {i+ j+ b a}{c+ k}{d+ l}

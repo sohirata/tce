@@ -1,0 +1,11 @@
+1.0/1.0 Sum( g3 g4 ) f( g3 g4 ) { h1+ p2 } { g3+ g4 }
+1.0/4.0 Sum( g3 g4 g5 g6 ) v( g3 g4 g5 g6 ) { h1+ p2 } { g3+ g4+ g6 g5 }
+1.0/1.0 Sum( g3 g4 p5 h6 ) f( g3 g4 ) t( p5 h6 ) { h1+ p2 } { g3+ g4 } { p5+ h6 }
+1.0/4.0 Sum( g3 g4 g5 g6 p7 h8 ) v( g3 g4 g5 g6 ) t( p7 h8 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ h8 }
+1.0/4.0 Sum( g3 g4 p5 p6 h7 h8 ) f( g3 g4 ) t( p5 p6 h7 h8 ) { h1+ p2 } { g3+ g4 } { p5+ p6+ h8 h7 }
+1.0/16.0 Sum( g3 g4 g5 g6 p7 p8 h9 h10 ) v( g3 g4 g5 g6 ) t( p7 p8 h9 h10 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ p8+ h10 h9 }
+1.0/144.0 Sum( g3 g4 g5 g6 p7 p8 p9 h10 h11 h12 ) v( g3 g4 g5 g6 ) t( p7 p8 p9 h10 h11 h12 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ p8+ p9+ h12 h11 h10 }
+1.0/2.0 Sum( g3 g4 p5 h6 p7 h8 ) f( g3 g4 ) t( p5 h6 ) t( p7 h8 ) { h1+ p2 } { g3+ g4 } { p5+ h6 } { p7+ h8 }
+1.0/8.0 Sum( g3 g4 g5 g6 p7 h8 p9 h10 ) v( g3 g4 g5 g6 ) t( p7 h8 ) t( p9 h10 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ h8 } { p9+ h10 }
+1.0/16.0 Sum( g3 g4 g5 g6 p7 h8 p9 p10 h11 h12 ) v( g3 g4 g5 g6 ) t( p7 h8 ) t( p9 p10 h11 h12 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ h8 } { p9+ p10+ h12 h11 }
+1.0/24.0 Sum( g3 g4 g5 g6 p7 h8 p9 h10 p11 h12 ) v( g3 g4 g5 g6 ) t( p7 h8 ) t( p9 h10 ) t( p11 h12 ) { h1+ p2 } { g3+ g4+ g6 g5 } { p7+ h8 } { p9+ h10 } { p11+ h12 }

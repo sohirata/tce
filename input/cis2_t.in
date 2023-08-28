@@ -1,0 +1,2 @@
+1.0/1.0 Sum( g7 g8 p9 h10 ) f( g7 g8 ) x( p9 h10 ) { h1+ h2+ h3+ p6 p5 p4 } { g7+ g8 } { p9+ h10 }
+1.0/4.0 Sum( g7 g8 g9 g10 p11 h12 ) v( g7 g8 g9 g10 ) x( p11 h12 ) { h1+ h2+ h3+ p6 p5 p4 } { g7+ g8+ g10 g9 } { p11+ h12 }

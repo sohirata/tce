@@ -1,0 +1,4 @@
+[ + 1.0 ] * Sum ( p1 h2 ) * x ( p1 h2 ) * y ( h2 p1 )
+[ + 0.25 ] * Sum ( p1 p2 h3 h4 ) * x ( p1 p2 h3 h4 ) * y ( h4 h3 p2 p1 )
+[ + 0.0277777777778 ] * Sum ( p1 p2 p3 h4 h5 h6 ) * x ( p1 p2 p3 h4 h5 h6 ) * y ( h6 h5 h4 p3 p2 p1 )
+[ + 0.00173611111111 ] * Sum ( p1 p2 p3 p4 h5 h6 h7 h8 ) * x ( p1 p2 p3 p4 h5 h6 h7 h8 ) * y ( h8 h7 h6 h5 p4 p3 p2 p1 )

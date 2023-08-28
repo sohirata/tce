@@ -1,0 +1,14 @@
+1.0/1.0 Sum( h7 p8 g9 g10 ) y( h7 p8 ) f( g9 g10 ) { h7+ p8 } { g9+ g10 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/4.0 Sum( h7 p8 g9 g10 g11 g12 ) y( h7 p8 ) v( g9 g10 g11 g12 ) { h7+ p8 } { g9+ g10+ g12 g11 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/4.0 Sum( h7 h8 p9 p10 g11 g12 ) y( h7 h8 p9 p10 ) f( g11 g12 ) { h7+ h8+ p10 p9 } { g11+ g12 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/16.0 Sum( h7 h8 p9 p10 g11 g12 g13 g14 ) y( h7 h8 p9 p10 ) v( g11 g12 g13 g14 ) { h7+ h8+ p10 p9 } { g11+ g12+ g14 g13 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/36.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 ) y( h7 h8 h9 p10 p11 p12 ) f( g13 g14 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/144.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 g15 g16 ) y( h7 h8 h9 p10 p11 p12 ) v( g13 g14 g15 g16 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14+ g16 g15 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/4.0 Sum( h7 h8 p9 p10 g11 g12 p13 h14 ) y( h7 h8 p9 p10 ) f( g11 g12 ) t( p13 h14 ) { h7+ h8+ p10 p9 } { g11+ g12 } { p13+ h14 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/16.0 Sum( h7 h8 p9 p10 g11 g12 g13 g14 p15 h16 ) y( h7 h8 p9 p10 ) v( g11 g12 g13 g14 ) t( p15 h16 ) { h7+ h8+ p10 p9 } { g11+ g12+ g14 g13 } { p15+ h16 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/36.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 p15 h16 ) y( h7 h8 h9 p10 p11 p12 ) f( g13 g14 ) t( p15 h16 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14 } { p15+ h16 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/144.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 g15 g16 p17 h18 ) y( h7 h8 h9 p10 p11 p12 ) v( g13 g14 g15 g16 ) t( p17 h18 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14+ g16 g15 } { p17+ h18 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/144.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 p15 p16 h17 h18 ) y( h7 h8 h9 p10 p11 p12 ) f( g13 g14 ) t( p15 p16 h17 h18 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14 } { p15+ p16+ h18 h17 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/576.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 g15 g16 p17 p18 h19 h20 ) y( h7 h8 h9 p10 p11 p12 ) v( g13 g14 g15 g16 ) t( p17 p18 h19 h20 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14+ g16 g15 } { p17+ p18+ h20 h19 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/72.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 p15 h16 p17 h18 ) y( h7 h8 h9 p10 p11 p12 ) f( g13 g14 ) t( p15 h16 ) t( p17 h18 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14 } { p15+ h16 } { p17+ h18 } { p1+ p2+ p3+ h6 h5 h4 }
+1.0/288.0 Sum( h7 h8 h9 p10 p11 p12 g13 g14 g15 g16 p17 h18 p19 h20 ) y( h7 h8 h9 p10 p11 p12 ) v( g13 g14 g15 g16 ) t( p17 h18 ) t( p19 h20 ) { h7+ h8+ h9+ p12 p11 p10 } { g13+ g14+ g16 g15 } { p17+ h18 } { p19+ h20 } { p1+ p2+ p3+ h6 h5 h4 }

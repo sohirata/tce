@@ -1,0 +1,3 @@
+1.0/1.0 Sum( h1 p2 g3 g4 ) y+( h1 p2 ) d( g3 g4 ) x( ) { h1+ p2 } { g3+ g4 } { }
+1.0/1.0 Sum( g1 g2 p3 h4 ) y+( ) d( g1 g2 ) x( p3 h4 ) { } { g1+ g2 } { p3+ h4 }
+1.0/1.0 Sum( h1 p2 g3 g4 p5 h6 ) y+( h1 p2 ) d( g3 g4 ) x( p5 h6 ) { h1+ p2 } { g3+ g4 } { p5+ h6 }
