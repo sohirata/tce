@@ -5,8 +5,8 @@ Tensor Contraction Engine (TCE) is a symbol algebra code written in Python, whic
 So Hirata (sohirata@illinois.edu)
 
 # references
-S. Hirata, J. Phys. Chem. A <b>107</b>, 9887-9897 (2003).
-S. Hirata, J. Chem. Phys. <b>121</b>, 51-59 (2004).
+S. Hirata, J. Phys. Chem. A <b>107</b>, 9887-9897 (2003). </br>
+S. Hirata, J. Chem. Phys. <b>121</b>, 51-59 (2004). </br>
 S. Hirata, Theor. Chem. Acc. <b>116</b>, 2-17 (2006).
 
 # how to compile
