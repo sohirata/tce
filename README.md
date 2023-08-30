@@ -33,7 +33,7 @@ The CCSD <i>T</i><sub>2</sub> amplitude equation can be derived by oce.py as fol
      >>> print(a)
      >>> a.writetofile("output/ccsd_t2.out")
 
-The CCSD T2 amplitude equation can then be transformed to a parallel Fortran77 code to be a part of NWCHEM:
+The CCSD <i>T</i><sub>2</sub> amplitude equation can then be transformed to a parallel Fortran77 code to be a part of NWCHEM:
 
      python
      >>> import tce
