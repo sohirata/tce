@@ -2,7 +2,7 @@
 Tensor Contraction Engine (TCE) is a symbol algebra code written in Python, which derives working equations of <i>ab initio</i> electron-correlated theories and synthesizes the corresponding computer programs that execute in parallel as a part of NWCHEM or UTCHEM quantum chemistry software.
 
 # author
-So Hirata (sohirata@illinois.edu)
+TCE has been developed by So Hirata at Pacific Northwest National Laboratory, University of Florida, and University of Illinois at Urbana-Champaign with contributions from Muneaki Kamiya (ionization and electron attachment) and Peng-Dong Fan (perturbation corrections) at University of Florida. TCE generates codes for NWCHEM developed by Pacific Northwest National Laboratory and distributed as open-source under the Educational Community License version 2.0. So Hirata thanks Dr. Robert J. Harrison, Dr. Marcel Nooijen, Dr. Alexander A. Auer, Dr. David E. Bernholdt, Dr. Venkatesh Choppella, Dr. P. Sadayappan, Dr. Gerald Baumgartner, Dr. Daniel Cociorva, Dr. Russell Pitzer, Dr. J. Ramanujam, Dr. Jarek Nieplocha, Dr. Theresa L. Windus, Dr. Michel Dupuis, Dr. Takeshi Yanai, and Dr. Kimihiko Hirao. A newer, more advanced version of TCE has also been developed by Dr. Toru Shiozaki, Dr. Muneaki Kamiya, Dr. Edward Valeev, and So Hirata for explicitly correlated methods.
 
 # references
 S. Hirata, J. Phys. Chem. A <b>107</b>, 9887-9897 (2003). </br>
@@ -45,4 +45,6 @@ The CCSD <i>T</i><sub>2</sub> amplitude equation can then be transformed to a pa
                          general=['d','e','f','v'],intermediate=['i','j'],active=1,program="NWCHEM")
      >>> print(c)
      >>> c.writetofile("fortran/ccsd_t2")
+
+
      
