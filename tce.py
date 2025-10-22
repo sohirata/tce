@@ -1397,7 +1397,7 @@ class Tensor:
       pythoncode = "".join([pythoncode,"]"])
       return pythoncode
 
-   def fortran90(self,types,permutation=[],reverse=0,suffix=""):
+   def fortran90(self,types,mapping="n",permutation=[],reverse=0,suffix=""):
       """Returns a character expression in Fortran90 syntax"""
       f90code = self.type
       if (self.type in types[3]):
@@ -1423,17 +1423,26 @@ class Tensor:
                      if (beforeindex.isidenticalto(permutation[nbeforeindex])):
                         index = permutation[nbeforeindex+int(len(permutation)/2)]
             if (nindex == 0):
-               f90code = "".join([f90code,index.show(),"-1)"])
+               if (mapping == "n"):
+                  f90code = "".join([f90code,index.show(),"-1)"])
+               else:
+                  f90code = "".join([f90code,"m(",index.show(),")-1)"])
             elif (nindex == len(self.indexes) - 1):
-               f90code = "".join([f90code,"*N+",index.show(),")"])
+               if (mapping == "n"):
+                  f90code = "".join([f90code,"*N+",index.show(),")"])
+               else:
+                  f90code = "".join([f90code,"*N+m(",index.show(),"))"])
             else:
-               f90code = "".join([f90code,"*N+",index.show(),"-1)"])
+               if (mapping == "n"):
+                  f90code = "".join([f90code,"*N+",index.show(),"-1)"])
+               else:
+                  f90code = "".join([f90code,"*N+m(",index.show(),")-1)"])
       else:
          f90code = "".join([f90code,"1"])
       f90code = "".join([f90code,")"])
       return f90code
 
-   def fortran90x(self,types):
+   def fortran90x(self,types,mapping="n"):
       """Anti-symmetrizer"""
 
       newcode = Code("Fortran90","")
@@ -1465,10 +1474,10 @@ class Tensor:
                parity = "+"
             else:
                parity = "-"
-            newline = " ".join(["TMP = TMP",parity,newtensor.fortran90(types)])
+            newline = " ".join(["TMP = TMP",parity,newtensor.fortran90(types,mapping)])
             newcode.statements.insert(newcode.pointer,newline)
             newcode.pointer = newcode.pointer + 1
-      newline = "".join([self.fortran90(types)," = TMP / ",repr(npermutations**2),".0d0"])
+      newline = "".join([self.fortran90(types,mapping)," = TMP / ",repr(npermutations**2),".0d0"])
       newcode.statements.insert(newcode.pointer,newline)
       newcode.pointer = len(newcode.statements)
 
@@ -6861,13 +6870,16 @@ class OperationTree:
 
       return pythoncode
 
-   def fortran90(self,filename="NONAME",mode="nopermutation",excitation=[],deexcitation=[],intermediate=[],general=[]):
+   def fortran90(self,filename="NONAME",mode="nopermutation",mapping="n",excitation=[],deexcitation=[],intermediate=[],general=[]):
       """Genrates a partial Fortran90 code for debugging purposes"""
       # Mode = "permutation"   : writes a code which takes index permutation into account
       # Mode = "nopermutation" : writes a code without index permutation considered
       # Mode = "analysis"      : stdouts a plan of implementation with index permutation
 
-      print(" ... generating a Fortran90 code")
+      if (mapping == "n"):
+         print(" ... generating a Fortran90 code")
+      else:
+         print(" ... generating a Fortran90 code with orbital mapping")
       print(" ")
       all = excitation+deexcitation+intermediate+general
       if (not all):
@@ -6922,11 +6934,11 @@ class OperationTree:
          print("")
  
       # loop over the tree
-      f90code.statements.insert(f90code.pointer,selfcopy.fortran90a(globaltargetindexes,types,mode))
+      f90code.statements.insert(f90code.pointer,selfcopy.fortran90a(globaltargetindexes,types,mapping,mode))
       
       # add an antisymmetrizer (only for the target intermediate)
       if (mode == "nopermutation"):
-         f90code.statements.append(selfcopy.children[0].contraction.tensors[0].fortran90x(types))
+         f90code.statements.append(selfcopy.children[0].contraction.tensors[0].fortran90x(types,mapping))
       
       # close the subroutine
       newline = "RETURN"
@@ -6939,6 +6951,9 @@ class OperationTree:
       f90code.add("integers","N")
       f90code.add("arguments","nocc")
       f90code.add("integers","nocc")
+      if ((mapping[0] == "y") or (mapping[0] == "Y")):
+         f90code.add("arguments","m")
+         f90code.add("integerarrays","m")
       if (mode == "nopermutation"):
          f90code.add("doubles","TMP")
       for n in self.tensorslist([]):
@@ -6951,13 +6966,13 @@ class OperationTree:
       # dump the code to a file
       f90code = f90code.expand()
       f90code.sortarguments()
-      f90code.writetofile(filename)
+#     f90code.writetofile(filename)
       if (mode == "analysis"):
          return "No Fortran code is dumped"
       else:
          return f90code
 
-   def fortran90a(self,globaltargetindexes,types,mode="nopermutation"):
+   def fortran90a(self,globaltargetindexes,types,mapping="n",mode="nopermutation"):
       """Recursive subprogram called by fortran90"""
 
       newcode = Code("Fortran90","")
@@ -6979,7 +6994,7 @@ class OperationTree:
          if (child.contraction.isoperation()):
 
             # recursive fortran90a() call
-            newcode.statements.insert(newcode.pointer,child.fortran90a(globaltargetindexes,types,mode))
+            newcode.statements.insert(newcode.pointer,child.fortran90a(globaltargetindexes,types,mapping,mode))
             newcode.pointer = len(newcode.statements)
             
             # Tensor 1
@@ -7724,7 +7739,7 @@ class OperationTree:
             if ((zeroscratch) and (mode == "nopermutation")):
                for index in child.contraction.tensors[0].indexes:
                   newcode.insertdoloop(index)
-               newdbl = child.contraction.tensors[0].fortran90(types)
+               newdbl = child.contraction.tensors[0].fortran90(types,mapping)
                newline = "".join([newdbl,"=0.0d0"])
                newcode.statements.insert(newcode.pointer,newline)
                newcode.pointer = len(newcode.statements)
@@ -7852,8 +7867,8 @@ class OperationTree:
                                  sign = " + "
                               else:
                                  sign = " - "
-                              newdbl = child.contraction.tensors[1].fortran90(types,permutation,0,"e")
-                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[1].fortran90(types)])
+                              newdbl = child.contraction.tensors[1].fortran90(types,mapping,permutation,0,"e")
+                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[1].fortran90(types,mapping)])
                               newcode.statements.insert(newcode.pointer,newline)
                               newcode.pointer = newcode.pointer + 1
                      newcode.pointer = len(newcode.statements)
@@ -8009,8 +8024,8 @@ class OperationTree:
                                  sign = " + "
                               else:
                                  sign = " - "
-                              newdbl = child.contraction.tensors[1].fortran90(types,permutation,0,"e")
-                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[1].fortran90(types)])
+                              newdbl = child.contraction.tensors[1].fortran90(types,mapping,permutation,0,"e")
+                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[1].fortran90(types,mapping)])
                               newcode.statements.insert(newcode.pointer,newline)
                               newcode.pointer = newcode.pointer + 1
                      newcode.pointer = len(newcode.statements)
@@ -8136,8 +8151,8 @@ class OperationTree:
                                  sign = " + "
                               else:
                                  sign = " - "
-                              newdbl = child.contraction.tensors[2].fortran90(types,permutation,0,"e")
-                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[2].fortran90(types)])
+                              newdbl = child.contraction.tensors[2].fortran90(types,mapping,permutation,0,"e")
+                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[2].fortran90(types,mapping)])
                               newcode.statements.insert(newcode.pointer,newline)
                               newcode.pointer = newcode.pointer + 1
                      newcode.pointer = len(newcode.statements)
@@ -8279,7 +8294,7 @@ class OperationTree:
                            else:
                               permutation = permutation + sub
                            for nindexa in range(int(len(permutation)/2),len(permutation)):
-                              for nindexb in range(len(peint(rmutation)/2),len(permutation)):
+                              for nindexb in range(int(len(permutation)/2),len(permutation)):
                                  if (nindexa >= nindexb):
                                     continue
                                  indexa = permutation[nindexa]
@@ -8293,8 +8308,8 @@ class OperationTree:
                                  sign = " + "
                               else:
                                  sign = " - "
-                              newdbl = child.contraction.tensors[2].fortran90(types,permutation,0,"e")
-                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[2].fortran90(types)])
+                              newdbl = child.contraction.tensors[2].fortran90(types,mapping,permutation,0,"e")
+                              newline = "".join([newdbl,"=",sign,child.contraction.tensors[2].fortran90(types,mapping)])
                               newcode.statements.insert(newcode.pointer,newline)
                               newcode.pointer = newcode.pointer + 1
                      newcode.pointer = len(newcode.statements)
@@ -8309,7 +8324,7 @@ class OperationTree:
                pointersave = newcode.pointer
                for npermutation in range(len(child.contraction.factor.permutations)):
                   permutation = child.contraction.factor.permutations[npermutation]
-                  newdbl = child.contraction.tensors[0].fortran90(types,permutation,1)
+                  newdbl = child.contraction.tensors[0].fortran90(types,mapping,permutation,1)
                   newline = "".join([newdbl,"=",newdbl,"+",\
                      "(",repr(child.contraction.factor.coefficients[npermutation]),"d0)*TMP"])
                   newcode.statements.insert(newcode.pointer,newline)
@@ -8333,7 +8348,7 @@ class OperationTree:
                if (len(sublocalzero) > 1):
                   newcode.insertif(sublocalzero,1)
                if ((zeroscratch) and (len(child.contraction.tensors) > 2)):
-                  newdbl = child.contraction.tensors[0].fortran90(types)
+                  newdbl = child.contraction.tensors[0].fortran90(types,mapping)
                   newline = "".join([newdbl,"=0.0d0"])
                   newcode.statements.insert(newcode.pointer,newline)
                   newcode.pointer = newcode.pointer + 1
@@ -8347,10 +8362,10 @@ class OperationTree:
                newline = "TMP=TMP+"
                for ntensor in range(len(child.contraction.tensors)):
                   if (ntensor == 1):
-                     newdbl = child.contraction.tensors[ntensor].fortran90(types)
+                     newdbl = child.contraction.tensors[ntensor].fortran90(types,mapping)
                      newline = "".join([newline,newdbl])
                   elif (ntensor > 1):
-                     newdbl = child.contraction.tensors[ntensor].fortran90(types)
+                     newdbl = child.contraction.tensors[ntensor].fortran90(types,mapping)
                      newline = "".join([newline,"*",newdbl])
                newcode.statements.insert(newcode.pointer,newline)
                newcode.pointer = newcode.pointer + 1
@@ -8432,7 +8447,7 @@ class OperationTree:
                                                                                  superlocalparticlezero,sublocalholezero)
                   deexcitationfactor = deexcitationfactor.normalize()
 # ... TO HERE
-               newdbl = child.contraction.tensors[0].fortran90(types)
+               newdbl = child.contraction.tensors[0].fortran90(types,mapping)
                if ((zeroscratch) and (len(child.contraction.tensors) == 2)):
                   newline = "".join([newdbl,"="])
                   zeroscratch = 0
@@ -8458,10 +8473,10 @@ class OperationTree:
                      else:
                         suffix = ""
                      if (ntensor == 1):
-                        newdbl = child.contraction.tensors[ntensor].fortran90(types,permutation,0,suffix)
+                        newdbl = child.contraction.tensors[ntensor].fortran90(types,mapping,permutation,0,suffix)
                         newline = "".join([newline,"(",repr(newfactor),"d0)*",newdbl])
                      elif (ntensor > 1):
-                        newdbl = child.contraction.tensors[ntensor].fortran90(types,permutation,0,suffix)
+                        newdbl = child.contraction.tensors[ntensor].fortran90(types,mapping,permutation,0,suffix)
                         newline = "".join([newline,"*",newdbl])
                newcode.statements.insert(newcode.pointer,newline)
                newcode.pointer = newcode.pointer + 1
@@ -9020,7 +9035,7 @@ class Code:
 # ... TO HERE
             elif ((indexa.type == "particle") and (indexb.type == "hole")):
                raise ValueError("A particle, hole sequence in a tensor")
-         newline = "".join(["IF (",indexa.show(),">=",indexb.show(),") CYCLE"])
+         newline = "".join(["IF (",indexa.show(),">",indexb.show(),") CYCLE"])
          self.statements.insert(self.pointer,newline)
          self.pointer = self.pointer + 1
 

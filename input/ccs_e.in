@@ -1,0 +1,4 @@
+1.0/1.0 Sum( g1 g2 p3 h4 ) f( g1 g2 ) t( p3 h4 ) { g1+ g2 } { p3+ h4 }
+1.0/4.0 Sum( g1 g2 g3 g4 p5 h6 ) v( g1 g2 g3 g4 ) t( p5 h6 ) { g1+ g2+ g4 g3 } { p5+ h6 }
+1.0/2.0 Sum( g1 g2 p3 h4 p5 h6 ) f( g1 g2 ) t( p3 h4 ) t( p5 h6 ) { g1+ g2 } { p3+ h4 } { p5+ h6 }
+1.0/8.0 Sum( g1 g2 g3 g4 p5 h6 p7 h8 ) v( g1 g2 g3 g4 ) t( p5 h6 ) t( p7 h8 ) { g1+ g2+ g4 g3 } { p5+ h6 } { p7+ h8 }
